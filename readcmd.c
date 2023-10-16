@@ -11,7 +11,10 @@ char *read_command(void)
 
 	nread = getline(&lineptr, &len, stdin);
 
-	if (n == -1)
+	if (nread  == -1)
+	{
+		free(lineptr);
 		return (NULL);
-	return (line);
+	}
+	return (lineptr);
 }
