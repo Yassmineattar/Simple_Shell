@@ -10,4 +10,6 @@
 #include <errno.h>
 #include <fcnt1.h>
 
+char *read_command(void);
+char **_split(char* line);
 #endif

@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
 				write(STDOUT_FILENO, "\n", 1);
 			return (state);
 		}
-		free(line);
 		command = _split(line);
 		state = _execute(command, argv);
 	}
