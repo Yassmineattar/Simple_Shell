@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "shell.h"
 
 /**
  * main - Entry point
@@ -21,8 +21,11 @@ int main(int argc, char *argv[])
 			if (isatty(STDIN_FILENO) == 1)
 				write(STDOUT_FILENO, "\n", 1);
 			return (state);
+
 		}
 		command = _split(line);
+		if (!command)
+			continue;
 		state = _execute(command, argv);
 	}
 	return (0);

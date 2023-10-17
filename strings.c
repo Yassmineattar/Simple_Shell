@@ -55,22 +55,20 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * _strlen - Computes the length of a string.
+ * _strlen - returns the length of a string.
  * @s: The input string.
  *
  * Return: The length of the input string.
  */
 int _strlen(char *s)
 {
-	int longi = 0;
+	int l = 0;
 
-	while (*s != '\0')
+	while (s[l] != '\0')
 	{
-		longi++;
-		s++;
+		l++;
 	}
-
-	return (longi);
+	return (l);
 }
 
 /**
@@ -110,15 +108,15 @@ char *_strcat(char *dest, char *src)
  */
 char *_strcpy(char *dest, char *src)
 {
-	int l = 0;
+	int i = 0;
 
-	while (*(src + l) != '\0')
+	while (src[i] != '\0')
 	{
-		dest[l] = src[l];
-		l++;
+		dest[i] = src[i];
+		i++;
 	}
 
-	dest[l] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
 

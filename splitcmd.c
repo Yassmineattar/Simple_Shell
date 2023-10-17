@@ -6,7 +6,7 @@
 */
 char **_split(char *line)
 {
-	char *token = NULL, cpy = NULL;
+	char *token = NULL, *cpy = NULL;
 	const char *delimiters = " \t\n";
 	int c = 0, i = 0;
 	char **cmd = NULL;
@@ -17,8 +17,10 @@ char **_split(char *line)
 	token = strtok(cpy, delimiters);
 	if (token == NULL)
 	{
-		free(line), line = NULL;
-		free(tmp), tmp = NULL;
+		free(line); 
+		line = NULL;
+		free(cpy);
+		cpy = NULL;
 		return (NULL);
 	}
 	while (token != NULL)
@@ -26,11 +28,13 @@ char **_split(char *line)
 		c++;
 		token = strtok(NULL, delimiters);
 	}
-	free(tmp), tmp = NULL;
+	free(cpy);
+	cpy = NULL;
 	cmd = malloc(sizeof(char *) * (c + 1));
-	if (cmd == NULL)
+	if (!cmd)
 	{
 		free(line);
+		line = NULL;
 		return (NULL);
 	}
 	token = strtok(line, delimiters);
