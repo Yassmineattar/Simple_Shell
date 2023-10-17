@@ -16,8 +16,13 @@ int main(int argc, char *argv[])
 	while (1)
 	{
 		line = read_command();
-		if (line == NULL)//if CTRL+D entred EOF is reached
+		if (line == NULL)
+		{
+			if (isatty(STDIN_FILENO) == 1)
+				write(STDOUT_FILENO, "\n", 1);
 			return (state);
+		}
+		free(line);
 		command = _split(line);
 		state = _execute(command, argv);
 	}
