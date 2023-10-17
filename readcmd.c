@@ -8,10 +8,12 @@ char *read_command(void)
 	char *lineptr = NULL;
 	size_t len = 0;
 	ssize_t nread;
-
+	write(STDOUT_FILENO, "$ ", 2);
 	nread = getline(&lineptr, &len, stdin);
 
-	if (n == -1)
+	if (nread == -1)
+	{
+		free(lineptr);
 		return (NULL);
-	return (line);
+	return (lineptr);
 }
