@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		command = _split(line);
 		if (command == NULL)
 			continue;
-		state = _execute(command, argv);
+		state = execute_command(command, argv);
 	}
 	return (0);
 }

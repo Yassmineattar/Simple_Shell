@@ -2,42 +2,38 @@
 
 /**
  * _strdup - fctn that duplicates a string.
- * @str: The string to duplicate
- *
- * Return: A pointer to the newly allocated space in memory,
- * or NULL if insufficient memory was available.
+ * @str: string input
+ * Return: a pointer that containes a copy of str if success NULL otherwise
  */
 char *_strdup(char *str)
 {
-	char *dup;
-	int i, len = 0;
+	char *d;
+	int i, l = 0;
 
 	if (str == NULL)
 		return (NULL);
 
-	while (str[len] != '\0')
-		len++;
+	while (str[l] != '\0')
+		l++;
 
-	dup = malloc(sizeof(char) * (len + 1));
+	d = malloc(sizeof(char) * (l + 1));
 
-	if (dup == NULL)
+	if (d == NULL)
 		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++)
-		dup[i] = str[i];
+		d[i] = str[i];
 
-	dup[i] = '\0';
+	d[i] = '\0';
 
-	return (dup);
+	return (d);
 }
 
 /**
- * _strcmp - Compares two strings.
- * @s1: The first string to be compared.
- * @s2: The second string to be compared.
- *
- * Return: An integer less than, equal to, or greater than zero if s1 is found,
- * respectively, to be less than, to match, or be greater than s2.
+ * _strcmp - Compares two strings
+ * @s1: first str
+ * @s2: second str
+ * Return: result
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -55,10 +51,10 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * _strlen - returns the length of a string.
- * @s: The input string.
+ * _strlen - returns the length of a string
+ * @s: The input string
  *
- * Return: The length of the input string.
+ * Return: The length of the input string
  */
 int _strlen(char *s)
 {
@@ -73,50 +69,49 @@ int _strlen(char *s)
 
 /**
  * _strcat - Concatenates two strings.
- * @dest: The destination string.
- * @src: The source string to be appended.
- *
- * Return: A pointer to the resulting string.
+ * @d: The destination str
+ * @s: The source str to be appended
+ * Return: A pointer to the resulting string
  */
-char *_strcat(char *dest, char *src)
+char *_strcat(char *d, char *s)
 {
 	int i = 0;
 	int j = 0;
 
-	while (dest[i] != '\0')
+	while (d[i] != '\0')
 	{
 		i++;
 	}
 
-	while (src[j] != '\0')
+	while (s[j] != '\0')
 	{
-		dest[i] = src[j];
+		d[i] = s[j];
 		i++;
 		j++;
 	}
 
-	dest[i] = '\0';
-	return (dest);
+	d[i] = '\0';
+	return (d);
 }
 
 /**
- * _strcpy - Copies a string.
- * @dest: The destination string.
- * @src: The source string to be copied.
+ * _strcpy -copies a string
+ * @d: The destination str
+ * @s: The source str to be copied
  *
- * Return: A pointer to the destination string.
+ * Return: A pointer to the destination string
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *d, char *s)
 {
 	int i = 0;
 
-	while (src[i] != '\0')
+	while (s[i] != '\0')
 	{
-		dest[i] = src[i];
+		d[i] = s[i];
 		i++;
 	}
 
-	dest[i] = '\0';
-	return (dest);
+	d[i] = '\0';
+	return (d);
 }
 
