@@ -4,7 +4,7 @@ void freeing(char **array_2d)
     int i;
 
     if (!array_2d)
-        return(NULL);
+        return ;
     for (i = 0; array_2d[i]; i++)
     {
         free(array_2d[i]);

@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 	char **command = NULL;
 	int state = 0;
 	(void) argc;
+	(void) argv;
 
 	while (1)
 	{
