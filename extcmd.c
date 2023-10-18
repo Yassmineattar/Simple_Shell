@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * execute_command - execute a command with its arguments in a separate child process
+ * execute_command - execute a command with its arguments
  *@command: 2D array that contains the command
  *@argv: arguments entered
  * Return: statues
