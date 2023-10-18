@@ -11,6 +11,7 @@ int _execute(char **command, char **argv)
 		{
 			perror(argv[0]);/*error handling*/
 			freeing(command);
+			exit(1);
 		}
 	}
 	else

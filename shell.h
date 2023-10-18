@@ -11,7 +11,7 @@ extern char **environ;
 #include <errno.h>
 #include <sys/stat.h>
 char *read_command(void);
-char **_split(char* line);
+char **_split(char *line);
 int _execute(char **command, char **argv);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);

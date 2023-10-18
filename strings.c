@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * _strdup - Duplicates a string.
- * @str: The string to duplicate.
+ * _strdup - fctn that duplicates a string.
+ * @str: The string to duplicate
  *
  * Return: A pointer to the newly allocated space in memory,
  * or NULL if insufficient memory was available.
