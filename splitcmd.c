@@ -17,10 +17,8 @@ char **_split(char *line)
 	token = strtok(cpy, delimiters);
 	if (token == NULL)
 	{
-		free(line); 
-		line = NULL;
-		free(cpy);
-		cpy = NULL;
+		free(line), line = NULL;
+		free(cpy), cpy = NULL;
 		return (NULL);
 	}
 	while (token != NULL)
@@ -33,8 +31,7 @@ char **_split(char *line)
 	cmd = malloc(sizeof(char *) * (c + 1));
 	if (!cmd)
 	{
-		free(line);
-		line = NULL;
+		free(line), line = NULL;
 		return (NULL);
 	}
 	token = strtok(line, delimiters);
@@ -45,7 +42,6 @@ char **_split(char *line)
 		i++;
 	}
 	free(line);
-	line = NULL;
-	cmd[i] = NULL;
+	line = NULL, cmd[i] = NULL;
 	return (cmd);
 }
