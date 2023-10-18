@@ -9,10 +9,10 @@ char *read_command(void)
 	size_t len = 0;
 	ssize_t nread;
 
-	if (isatty(STDIN_FILENO) == 1)
+	if (isatty(STDIN_FILENO) == 1)/*checks if its on terminal*/
 		write(STDOUT_FILENO, "$ ", 2);
 	nread = getline(&lineptr, &len, stdin);
-	if (nread  == -1)
+	if (nread  == -1) /* when error occured it returns -1*/
 	{
 		free(lineptr);
 		return (NULL);

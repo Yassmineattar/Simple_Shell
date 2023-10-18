@@ -8,7 +8,7 @@ char **_split(char *line)
 {
 	char *token = NULL, *cpy = NULL;
 	const char *delimiters = " \t\n";
-	int c = 0, i = 0;
+	int c = 0, i;
 	char **cmd = NULL;
 
 	if (line == NULL)
@@ -35,11 +35,10 @@ char **_split(char *line)
 		return (NULL);
 	}
 	token = strtok(line, delimiters);
-	while (token != NULL)
+	for (i = 0; i < c; i++)
 	{
 		cmd[i] = _strdup(token);
 		token = strtok(NULL, delimiters);
-		i++;
 	}
 	free(line);
 	line = NULL, cmd[i] = NULL;
