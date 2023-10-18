@@ -16,26 +16,16 @@ int main(int argc, char *argv[])
 	while (1)
 	{
 		line = read_command();
-<<<<<<< HEAD
-		if (line == NULL)//if CTRL+D entred EOF is reached
-=======
 		if (line == NULL)
->>>>>>> refs/remotes/origin/master
 		{
 			if (isatty(STDIN_FILENO) == 1)
 				write(STDOUT_FILENO, "\n", 1);
 			return (state);
-<<<<<<< HEAD
 		}
-		free(line);
-=======
-
-		}
->>>>>>> refs/remotes/origin/master
 		command = _split(line);
 		if (!command)
 			continue;
-		state = _execute(command, argv);
+		/*state = _execute(command, argv);*/
 	}
 	return (0);
 }
